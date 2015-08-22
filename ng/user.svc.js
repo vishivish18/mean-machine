@@ -21,8 +21,8 @@ angular.module('app')
 		return $http.post('api/users',{
 			username : username, password : password
 		}).then(function(val){			
-			return val;
-			//return svc.login(username,password) This line is not workung. Why ?
+			//return val;			
+			return svc.login(username,password) 
 
 		})
 	}

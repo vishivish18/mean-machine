@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/social',function(){
+mongoose.connect('mongodb://localhost/trail_tracker',function(){
 	console.log('mongodb connected');
 })
 
