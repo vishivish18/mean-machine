@@ -6,7 +6,7 @@ angular.module('app')
 			console.log("printing response")
 			console.log(response.data)
 			$scope.$emit('login',response.data)
-			$location.path('/posts')
+			$location.path('/home')
 			
 		})
 	}
