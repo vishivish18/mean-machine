@@ -1,13 +1,37 @@
-<div class="container">
-<form ng-submit="register(username, password)">
-  <div class="form-group">
-    <label>Username</label>
-    <input class="form-control" type="text" ng-model="username">
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input class="form-control" type="password" ng-model="password">
-  </div>
-  <input class="btn btn-success btn-lg btn-block" type="submit" value="Register">
-</form>
-</div>
+<nav class='navbar navbar-default'>
+	<div class="container">
+	<div class="navbar-header">
+      <a class="navbar-brand" href="/">Trail-Tracker</a>
+    </div>
+		<ul class="nav navbar-nav pull-right">
+			<li><a href="/#/">About</a></li>
+			<li><a href="/#/register">Contact</a></li>
+			<li><a href="/#/">Login</a></li>
+		</ul>
+		
+	</div>
+</nav>	
+	<div class="container">	
+	
+     <div class="row">
+     	 <div class="col-sm-3 col-md-4"></div>
+		 <div class="col-xs-3 col-md-4">
+
+
+			<form style="margin-top:60%;" ng-submit="register(username, password)">
+			<h1>Sign Up </h1>
+				  <div class="form-group">				  
+				    <input type="text" name="name" ng-model="name" class="form-control" placeholder="Name">
+				  </div>
+				  <div class="form-group">				  
+				    <input type="text" name="email" ng-model="username" class="form-control" placeholder="Email">
+				  </div>				  
+				  <div class="form-group">				    
+				    <input type="password" name="password" ng-model="password" class="form-control"  placeholder="Password">
+				  </div>				  
+				  <button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		 </div>
+		 <div class="col-xs-6 col-md-4"></div>		
+	 </div>		
+	</div>
