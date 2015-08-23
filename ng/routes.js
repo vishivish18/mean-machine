@@ -4,6 +4,6 @@ angular.module('app')
 	.when('/',{controller:'LoginCtrl',templateUrl:'login.html'})	
 	.when('/posts',{controller:'PostsCtrl',templateUrl:'posts.html'})
 	.when('/register',{controller:'RegisterCtrl',templateUrl:'register.html'})
-	.when('/home',{controller:'HomeCtrl',templateUrl:'home.html'})	
+	.when('/home',{controller:'HomeCtrl',templateUrl:'users/home.html'})	
 	
 })
