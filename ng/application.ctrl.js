@@ -3,6 +3,7 @@ angular.module('app')
 	$scope.$on('login',function(_,user){
 		$scope.currentUser = user
 		$rootScope.currentUser = user
+		localStorage.setItem('logged_user',$rootScope.currentUser.username)
 	})
 
 })
