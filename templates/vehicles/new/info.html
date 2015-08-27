@@ -16,31 +16,31 @@
   <div class="container"> 
   <div class="top-buffer row">
         <div class="col-md-12">
-          <input type="text" ng-model=""  placeholder="Device ID" class="form-control" autofocus>
+          <input type="text" ng-model="dev_id"  placeholder="Device ID" class="form-control" autofocus>
         </div>
   </div>
 
   <div class="top-buffer row">
         <div class="col-md-12">
-          <input type="text" ng-model=""  placeholder="Vehicle Number" class="form-control">
+          <input type="text" ng-model="v_number"  placeholder="Vehicle Number" class="form-control">
         </div>
   </div>
 
   <div class="top-buffer row">
         <div class="col-md-12">
-          <input type="text" ng-model=""  placeholder="Driver Name" class="form-control">
+          <input type="text" ng-model="driver_name"  placeholder="Driver Name" class="form-control">
         </div>
   </div>
 
   <div class="top-buffer row">
         <div class="col-md-12">
-          <input type="text" ng-model=""  placeholder="SOS contact" class="form-control">
+          <input type="text" ng-model="sos_number"  placeholder="SOS contact" class="form-control">
         </div>
   </div>
 
   <div class="top-buffer row">
         <div class="col-md-12">
-          <a href="#/vehicles/new/info" class="btn btn-success btn-lg pull-right">Save</a>
+          <input type="button" ng-click="saveVehicleDetails()" value="Submit" class="btn btn-sm btn-success">
         </div>
 
   </div>
