@@ -4,3 +4,6 @@ h1 {
 p {
   color: #fff;
 }
+.top-buffer {
+  margin-top: 20px;
+}
