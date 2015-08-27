@@ -14,65 +14,32 @@
   </div>
 </nav>  
   <div class="container"> 
-  <table>
-    <tr>
-        <th width="220">Device ID</th>
-        <th width="220">Vehicle Number</th>
-        <th width="220">Driver Name</th>
-        <th width="180">Position</th>
-        <th width="180">Status</th>
-        
-        
-        
+  <div class="row">        
+        <div class="col-md-2">
+          <a href="#/vehicles/new/info" class="btn btn-primary btn-sm pull-left">+ Add New Vehicle</a>
+        </div>
 
-    </tr>
-    
-    
-    <tr data-id="353173064679903" data-model="arvaa">
-    
-        <td height="50">AST001</td>
-        <td>DL 5S BV 6741</td>
+  </div>
+  <br/>
+  <table class="table table-hover">
+      <thead>
+        <tr>        
+          <th data-sort-ignore="true">Device ID</th>
+          <th data-type="alpha" >Vehicle Number</th>
+          <th>Driver Name</th>
+          <th data-sort-ignore="true">Position</th>
+          <th>Status</th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td></td>
+        <td></td>
         <td>{{name}}</td>
-        
-        
-        
-    <td width="120"><a type="button" class="btn btn-info" data-dismiss="modal" href="/arvaa/show/55bb1a9a0aa458e55374f6c1" target="_blank"> <span class="glyphicon glyphicon-map-marker"></span> Locate</a></td>    
-        
-    </tr>
+          
+      </tbody>
+    </table>
 
-    <tr data-id="353173064679903" data-model="arvaa">
-    
-        <td height="50">AST002</td>
-        <td>BR 1AG 8030</td>
-        <td>Valentino Rosi</td>
-        
-        
-        
-    <td width="120"><a type="button" class="btn btn-info" data-dismiss="modal" href="/arvaa/show/55bb1a9a0aa458e55374f6c1" target="_blank"><span class="glyphicon glyphicon-map-marker"></span> Locate </a></td> 
-
-    <td width="120"><a type="button" class="btn btn-danger" data-dismiss="modal" href="/arvaa/show/55bb1a9a0aa458e55374f6c1" target="_blank"><span class="glyphicon glyphicon-warning-sign"></span>  2 Warnings </a></td>    
-        
-    </tr>
-
-
-
-    <tr data-id="353173064679903" data-model="arvaa">
-    
-        <td height="50">AST003</td>
-        <td>UK 3M 1843</td>
-        <td>Michael Schumacher</td>
-        
-        
-        
-    <td width="120"><a type="button" class="btn btn-info" data-dismiss="modal" href="/arvaa/show/55bb1a9a0aa458e55374f6c1" target="_blank"><span class="glyphicon glyphicon-map-marker"></span> Locate </a></td>
-
-    <td width="120"><a type="button" class="btn btn-warning" data-dismiss="modal" href="/arvaa/show/55bb1a9a0aa458e55374f6c1" target="_blank"><span class="glyphicon glyphicon-exclamation-sign"></span> Signal Lost </a></td>    
-        
-    </tr>
-    
-    
-
-  </table>
      
   </div>
 
