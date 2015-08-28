@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('VehiclesCtrl',function($scope,$http){ 
+.controller('VehiclesCtrl',function($scope,$http,$location){ 
  
 
 $scope.saveVehicleDetails = function(){
@@ -9,10 +9,14 @@ $scope.saveVehicleDetails = function(){
 
 	$http.post('/api/vehicle',{
 		dev_id: $scope.dev_id,
-        v_number: $scope.v_number                        
+        v_number: $scope.v_number,
+        driver_name : $scope.driver_name,
+        sos_number : $scope.sos_number                       
 	})
 	.then(function(response) {
 	    console.log(response)
+	    $location.path('/home')
+
 	  }, function(response) {
 	    // called asynchronously if an error occurs
 	    // or server returns response with an error status.

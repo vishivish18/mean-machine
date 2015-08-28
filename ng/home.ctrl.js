@@ -1,10 +1,23 @@
 angular.module('app')
-.controller('HomeCtrl',function($scope,$rootScope){ 
-  $scope.hello = "this is from the controller hello"
- 	console.log($rootScope.currentUser)
- 	
- 	$scope.name = localStorage.getItem('logged_user');
- 	console.log($scope.name);
+.controller('HomeCtrl',function($scope,$http){ 
+  	
+
+	$scope.setup = function(){
+	 
+	$http.get('/api/vehicle')
+	.then(function(response) {
+	    console.log(response.data[0].device_id)
+
+	  }, function(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
+	
+	 }
+
+	 $scope.setup();
+
+
  
 })
 
