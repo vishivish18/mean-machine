@@ -5,7 +5,8 @@ var config = require ('../../config')
 
 router.post('/',function(req,res,next){
 
-  var vehicle = new Vehicle ({device_id: req.body.dev_id, vehicle_number:req.body.v_number})
+  var vehicle = new Vehicle ({device_id: req.body.dev_id, vehicle_number:req.body.v_number,
+  	driver_name:req.body.driver_name, sos_number:req.body.sos_number})
   
     vehicle.save(function(err,user){
       if(err){ console.error(err)}      
@@ -14,6 +15,19 @@ router.post('/',function(req,res,next){
 
     })
   })
+
+
+router.get('/',function(req,res,next){
+  Vehicle.find()
+	  .sort('-date')
+	  .exec(function (err, vehicle) {
+	    if (err) { return next(err) }
+	    res.json(vehicle)
+  	})
+
+    
+  })
+
 
 
 
