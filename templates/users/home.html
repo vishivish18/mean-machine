@@ -29,6 +29,8 @@
           <th>Driver Name</th>
           <th data-sort-ignore="true">Position</th>
           <th>Status</th>          
+          <th>SOS</th>          
+          <th>Edit</th>          
         </tr>
       </thead>
       <tbody>
@@ -36,6 +38,10 @@
         <td>{{value.device_id}}</td>
         <td>{{value.vehicle_number}}</td>
         <td>{{value.driver_name}}</td>
+        <td>
+        <a type="button" class="btn btn-info"href="#" target="_blank"> <span class="glyphicon glyphicon-map-marker"></span> Locate</a>
+        </td>
+        <td><a type="button" class="btn btn-danger" href="#" target="_blank"><span class="glyphicon glyphicon-warning-sign"></span>  2 Warnings </a></td>   
         <td>{{value.sos_number}}</td>
         <td>Normal</td>
           

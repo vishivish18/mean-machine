@@ -9,7 +9,9 @@ router.post('/',function(req,res,next){
   	driver_name:req.body.driver_name, sos_number:req.body.sos_number})
   
     vehicle.save(function(err,user){
-      if(err){ console.error(err)}      
+      if(err){ 
+        return res.status(500).send(err);        
+      }      
         // res.send(201)
         res.json(vehicle);
 
