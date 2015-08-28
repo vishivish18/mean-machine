@@ -6,7 +6,7 @@ angular.module('app')
 	 
 	$http.get('/api/vehicle')
 	.then(function(response) {
-	    console.log(response.data[0].device_id)
+	   	$scope.model = response.data
 
 	  }, function(response) {
 	    // called asynchronously if an error occurs
