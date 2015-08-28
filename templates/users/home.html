@@ -21,7 +21,7 @@
 
   </div>
   <br/>
-  <table class="table table-hover">
+  <table class="table table-hover table-striped table-bordered ">
       <thead>
         <tr>        
           <th data-sort-ignore="true">Device ID</th>
@@ -32,10 +32,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-        <td></td>
-        <td></td>
-        <td>{{name}}</td>
+        <tr ng-repeat="value in model">
+        <td>{{value.device_id}}</td>
+        <td>{{value.vehicle_number}}</td>
+        <td>{{value.driver_name}}</td>
+        <td>{{value.sos_number}}</td>
+        <td>Normal</td>
           
       </tbody>
     </table>
