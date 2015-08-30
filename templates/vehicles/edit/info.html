@@ -1,0 +1,56 @@
+
+<div class="container">
+  <nav class='navbar navbar-inverse'>
+  
+  <div class="navbar-header">
+      <a class="navbar-brand" href="/">Trail-Tracker</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a class="posts" href="/#/">Posts</a></li>
+      <li><a href="/#/home">Home</a></li>
+    </ul>
+    <ul ng-if="!currentUser" class="nav navbar-nav navbar-right">
+      <li><a class="register" href="/#/register">Register</a></li>
+      <li><a class="login" href="/#/login">Login</a></li>
+    </ul>
+    <ul ng-if="currentUser" class="nav navbar-nav navbar-right">      
+    <li><a class="logout" href="#" ng-click="logout()">Logout</a></li>
+    </ul>
+
+    
+  </div>
+</nav>  
+  <div class="container"> 
+  <div class="top-buffer row">
+        <div class="col-md-12">
+          <input type="text" ng-model="dev_id"  placeholder="Device ID" class="form-control" autofocus>
+        </div>
+  </div>
+
+  <div class="top-buffer row">
+        <div class="col-md-12">
+          <input type="text" ng-model="v_number"  placeholder="Vehicle Number" class="form-control">
+        </div>
+  </div>
+
+  <div class="top-buffer row">
+        <div class="col-md-12">
+          <input type="text" ng-model="driver_name"  placeholder="Driver Name" class="form-control">
+        </div>
+  </div>
+
+  <div class="top-buffer row">
+        <div class="col-md-12">
+          <input type="text" ng-model="sos_number"  placeholder="SOS contact" class="form-control">
+        </div>
+  </div>
+
+  <div class="top-buffer row">
+        <div class="col-md-12">
+          <input type="button" ng-click="saveVehicleDetails()" value="Submit" class="btn btn-sm btn-success">
+        </div>
+
+  </div>
+  <br/>     
+  </div>
+

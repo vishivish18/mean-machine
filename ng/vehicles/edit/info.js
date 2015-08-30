@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('VehiclesNewInfoCtrl',function($scope,$http,$location){ 
+.controller('VehiclesEditInfoCtrl',function($scope,$http,$location){ 
  
 
 $scope.saveVehicleDetails = function(){
