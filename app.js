@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 
-app.get('/hello', function(req, res) {
+app.get('/hello', isAuthenticated, checkTwo, function(req, res) {
         res.send('look at me!');
 });
 
