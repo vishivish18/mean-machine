@@ -11,6 +11,7 @@ var app = express();
 
 app.get('/hello', isAuthenticated, checkTwo, function(req, res) {
         res.send('look at me!');
+        console.log("check double middleware");
 });
 
 app.use('/api/route', router);
