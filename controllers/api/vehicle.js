@@ -4,7 +4,9 @@ var config = require ('../../config')
 
 
 
-//router.use here will fire with all the /api/vehicle calls
+//router.use here will fire with all the /api/vehicle calls,
+//this will act like a middleware for all routes specific to this.
+//This method can be used to secure routes
 
 router.use(function timeLog(req, res, next) {
   console.log('Time: ', Date.now());
