@@ -3,6 +3,14 @@ var Vehicle = require('../../models/vehicle')
 var config = require ('../../config')
 
 
+
+//router.use here will fire with all the /api/vehicle calls
+
+router.use(function timeLog(req, res, next) {
+  console.log('Time: ', Date.now());
+  next();
+});
+
 router.post('/',function(req,res,next){
 
   var vehicle = new Vehicle ({device_id: req.body.dev_id, vehicle_number:req.body.v_number,
