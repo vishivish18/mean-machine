@@ -9,9 +9,35 @@ var app = express();
 
 
 
+app.get('/user/:id', function (req, res, next) {
+  console.log('ID:', req.params.id);
+  next();
+}, function (req, res, next) {
+  console.log(res)
+  res.send('User Info');
+
+});
+
+// handler for /user/:id which prints the user id
+app.get('/user/:id', function (req, res, next) {
+  res.end(req.params.id);
+});
+
+
 app.get('/hello', isAuthenticated,  function(req, res) {
         
 });
+
+//This can be used to identify anytype of request with URL 
+/*
+app.use('/user/:id', function(req, res, next) {
+  console.log('Request URL:', req.originalUrl);
+  next();
+}, function (req, res, next) {
+  console.log('Request Type:', req.method);
+  next();
+});*/
+
 
 app.use('/api/route', router);
 app.use(bodyParser.json()); // support json encoded bodies
