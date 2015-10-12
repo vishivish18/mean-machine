@@ -8,8 +8,13 @@ var config = require ('../../config')
 //this will act like a middleware for all routes specific to this.
 //This method can be used to secure routes
 
-router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
+//need to use auth.js , here check request header is blocking data which is good.
+//need to understand how to use auth.js throughout as standard
+
+
+router.use(function timeLog(req, res, next) {  
+  console.log(req.headers['x-auth']);
+  if(req.headers['x-auth'])
   next();
 });
 
