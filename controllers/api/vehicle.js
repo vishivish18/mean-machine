@@ -12,15 +12,15 @@ var config = require ('../../config')
 //need to understand how to use auth.js throughout as standard
 
 
-router.use(function timeLog(req, res, next) {  
-  console.log(req.headers['x-auth']);
+router.use(function timeLog(req, res, next) {    
   if(req.headers['x-auth'])
+    console.log(req.auth.username)
   next();
 });
 
 router.post('/',function(req,res,next){
 
-  var vehicle = new Vehicle ({device_id: req.body.dev_id, vehicle_number:req.body.v_number,
+  var vehicle = new Vehicle ({device_id: req.body.dev_id, user_id: req.auth.username, vehicle_number:req.body.v_number,
   	driver_name:req.body.driver_name, sos_number:req.body.sos_number})
   
     vehicle.save(function(err,user){
@@ -35,16 +35,36 @@ router.post('/',function(req,res,next){
 
 
 router.get('/',function(req,res,next){
-  Vehicle.find()
+  /*Vehicle.findOne()
 	  .sort('-date')
 	  .exec(function (err, vehicle) {
 	    if (err) { return next(err) }
 	    res.json(vehicle)
   	})
+*/    
+
+      Vehicle.find({user_id:req.auth.username},function(err,vehicle){
+      if(err){return next(err)}
+      console.log("this is the vehicle from Vehicle GET: "+vehicle)        
+      //console.log(vehicle)
+      res.json(vehicle)      
+    })
 
     
   })
 
+
+router.get('/', function(req,res,next){
+
+var auth = jwt.decode(req.headers['x-auth'],config.secret)
+      User.findOne({username:auth.username},function(err,user){
+      if(err){return next(err)}
+      console.log("this is the user from USER GET: "+user)        
+      res.json(user)
+      
+
+    })
+})
 
 
 
