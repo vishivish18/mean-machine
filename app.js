@@ -9,17 +9,17 @@ var app = express();
 
 
 
-app.get('/user/:id', function (req, res, next) {
+/*app.post('/user/:id', function (req, res, next) {
   console.log('ID:', req.params.id);
   next();
 }, function (req, res, next) {
   console.log(res)
   res.send('User Info');
 
-});
+});*/
 
 // handler for /user/:id which prints the user id
-app.get('/user/:id', function (req, res, next) {
+app.post('/user/:id', function (req, res, next) {
   res.end(req.params.id);
 });
 
