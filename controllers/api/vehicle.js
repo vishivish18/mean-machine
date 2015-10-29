@@ -1,5 +1,6 @@
 var router = require('express').Router()
 var Vehicle = require('../../models/vehicle')
+var Location = require('../../models/location')
 var config = require ('../../config')
 
 
@@ -23,7 +24,7 @@ router.post('/',function(req,res,next){
   var vehicle = new Vehicle ({device_id: req.body.dev_id, user_id: req.auth.username, vehicle_number:req.body.v_number,
   	driver_name:req.body.driver_name, sos_number:req.body.sos_number})
   
-    vehicle.save(function(err,user){
+    vehicle.save(function(err,vehicle){
       if(err){ 
         return res.status(500).send(err);        
       }      
@@ -34,14 +35,30 @@ router.post('/',function(req,res,next){
   })
 
 
+router.post('/location/:vehicle_id', function (req, res, next) {
+  //res.end(req.params.vehicle_id);
+
+  var location = new Location ({device_id: req.params.vehicle_id, latitude: req.body.latitude, longitude:req.body.longitude,
+    speed:req.body.speed})
+  
+    location.save(function(err,location){
+      if(err){ 
+        return res.status(500).send(err);        
+      }      
+        // res.send(201)
+        res.json(location);
+
+    })
+
+
+
+  
+});
+
+
+
+
 router.get('/',function(req,res,next){
-  /*Vehicle.findOne()
-	  .sort('-date')
-	  .exec(function (err, vehicle) {
-	    if (err) { return next(err) }
-	    res.json(vehicle)
-  	})
-*/    
 
       Vehicle.find({user_id:req.auth.username},function(err,vehicle){
       if(err){return next(err)}
@@ -51,19 +68,6 @@ router.get('/',function(req,res,next){
     })
 
     
-  })
-
-
-router.get('/', function(req,res,next){
-
-var auth = jwt.decode(req.headers['x-auth'],config.secret)
-      User.findOne({username:auth.username},function(err,user){
-      if(err){return next(err)}
-      console.log("this is the user from USER GET: "+user)        
-      res.json(user)
-      
-
-    })
 })
 
 
