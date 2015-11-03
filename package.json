@@ -20,7 +20,8 @@
     "jwt-simple": "^0.3.0",
     "lodash": "^3.10.0",
     "ws": "^0.7.2",
-    "wscat": "^1.0.0"
+    "wscat": "^1.0.0",
+    "mongoose": "~4.2.4"
   },
   "devDependencies": {
     "chai": "^3.2.0",
