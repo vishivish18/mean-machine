@@ -6,7 +6,7 @@ angular.module('app')
 	 
 	$http.get('/api/vehicle')
 	.then(function(response) {
-	   	$scope.model = response.data
+	   	$scope.model = response.data;
 
 	  }, function(response) {
 	    // called asynchronously if an error occurs
@@ -16,6 +16,11 @@ angular.module('app')
 	 }
 
 	 $scope.setup();
+
+
+	 $scope.markOnMap = function(){
+	 	console.log("hello");
+	 }
 
 
  
