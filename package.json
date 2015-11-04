@@ -47,5 +47,5 @@
   "bugs": {
     "url": "https://github.com/vishivish18/mean-social-app/issues"
   },
-  "scripts" : { "start" : "gulp build" }
+  "scripts" : { "start" : "gulp dev" }
 }
