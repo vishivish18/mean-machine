@@ -1,7 +1,7 @@
 angular.module('app')
 .run(function($rootScope,$timeout){
 	(function connect(){
-	var url = 'ws://localhost:3000'
+	var url = 'wss://frozen-brushlands-5757.herokuapp.com'
 	var connection = new WebSocket(url)
 		connection.onclose = function(e){
 		console.log('WebSocket Disconnected......')

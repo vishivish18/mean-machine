@@ -46,5 +46,6 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/vishivish18/mean-social-app/issues"
-  }
+  },
+  "scripts" : { "start" : "gulp dev" }
 }
