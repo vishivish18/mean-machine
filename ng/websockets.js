@@ -10,6 +10,7 @@ angular.module('app')
 
 	connection.onmessage = function(e){
 		console.log(e)
+		console.log("New WebSocket Connected")
 		var payload = JSON.parse(e.data)
 		$rootScope.$broadcast('ws:'+payload.topic, payload.data)
 	}
