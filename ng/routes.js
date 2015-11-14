@@ -7,6 +7,7 @@ angular.module('app')
 	.when('/home',{controller:'HomeCtrl',templateUrl:'users/home.html'})	
 	.when('/vehicles/new/info',{controller:'VehiclesNewInfoCtrl',templateUrl:'vehicles/new/info.html'})	
 	.when('/vehicles/edit/:deviceId/info',{controller:'VehiclesEditInfoCtrl',templateUrl:'vehicles/edit/info.html'})	
+	.when('/vehicles/edit/:deviceId/map',{controller:'VehiclesEditMapCtrl',templateUrl:'vehicles/edit/map.html'})	
 	.when('/401',{controller:'ErrorCtrl',templateUrl:'errors/401.html'})	
 
 	$locationProvider.html5Mode(true)

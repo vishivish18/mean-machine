@@ -1,0 +1,38 @@
+
+<div class="container">
+  <nav class='navbar navbar-inverse'>
+  
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">Trail-Tracker</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a class="posts" href="/#/">Posts</a></li>
+        <li><a href="/#/home">Home</a></li>
+    </ul>
+    <ul ng-if="!currentUser" class="nav navbar-nav navbar-right">
+      <li><a class="register" href="/#/register">Register</a></li>
+      <li><a class="login" href="/#/login">Login</a></li>
+    </ul>
+    <ul ng-if="currentUser" class="nav navbar-nav navbar-right">      
+    <li><a class="logout" href="#" ng-click="logout()">Logout</a></li>
+    </ul>
+  </nav>  
+</div>
+
+<div class="container">
+  
+    
+        <h1>this is map</h1>
+
+
+<div id="googleMap" style="position:absolute; height: 500px; width: 90%; background-color:white;">
+  
+</div>
+
+
+
+
+
+</div>
+
+
