@@ -54,7 +54,7 @@ router.post('/location/:vehicle_id', function (req, res, next) {
 
 router.get('/location/:vehicle_id', function (req, res, next) {
   //res.end(req.params.vehicle_id);
-  Location.find({device_id:req.params.vehicle_id},function(err,location){
+  Location.findOne({device_id:req.params.vehicle_id},function(err,location){
       if(err){return next(err)}
       console.log("this is the location of the vehicle: "+location)              
       res.json(location)      
