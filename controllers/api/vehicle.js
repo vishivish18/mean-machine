@@ -69,8 +69,19 @@ router.get('/',function(req,res,next){
 
       Vehicle.find({user_id:req.auth.username},function(err,vehicle){
       if(err){return next(err)}
-      console.log("this is the vehicle from Vehicle GET: "+vehicle)        
+      console.log("this is the user list of vehicles from Vehicle GET: "+vehicle)        
       //console.log(vehicle)
+      res.json(vehicle)      
+    })
+
+    
+})
+
+
+router.get('/:vehicle_id',function(req,res,next){
+
+      Vehicle.findOne({device_id:req.params.vehicle_id},function(err,vehicle){
+      if(err){return next(err)}            
       res.json(vehicle)      
     })
 

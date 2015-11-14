@@ -1,2 +1,4 @@
 /node_modules
 /bower_components
+db.js
+db.sample.js
