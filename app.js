@@ -18,8 +18,14 @@ var app = express();
 
 });*/
 
+/*app.use(function (req, res, next) {
+    res.set('Location', '/#' + req.originalUrl)
+       .status(301)
+       .send();
+});*/
+
 // handler for /user/:id which prints the user id
-app.post('/user/:id', function (req, res, next) {
+/*app.post('/user/:id', function (req, res, next) {
   res.end(req.params.id);
 });
 
@@ -27,7 +33,7 @@ app.post('/user/:id', function (req, res, next) {
 app.get('/hello', isAuthenticated,  function(req, res) {
         
 });
-
+*/
 //This can be used to identify anytype of request with URL 
 /*
 app.use('/user/:id', function(req, res, next) {

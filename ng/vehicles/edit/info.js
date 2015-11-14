@@ -1,27 +1,21 @@
 angular.module('app')
-.controller('VehiclesEditInfoCtrl',function($scope,$http,$location){ 
+.controller('VehiclesEditInfoCtrl',function($scope,$http,$location,$routeParams){ 
  
 
-$scope.saveVehicleDetails = function(){
-	console.log("in controller 2")
-	console.log($scope.dev_id + $scope.v_number)
-	 
-
-	$http.post('/api/vehicle',{
-		dev_id: $scope.dev_id,
-        v_number: $scope.v_number,
-        driver_name : $scope.driver_name,
-        sos_number : $scope.sos_number                       
-	})
+$scope.setup = function(){
+	console.log($routeParams)
+	$http.get('/api/vehicle/'+$routeParams.deviceId)
 	.then(function(response) {
-	    console.log(response)
-	    $location.path('/home')
+	    $scope.model = response.data;
+	    console.log($scope.model)
 
 	  }, function(response) {
 	    console.log(response)
 	  });
 	
 }
+
+$scope.setup();
  
  
  
