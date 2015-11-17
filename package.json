@@ -21,7 +21,8 @@
     "lodash": "^3.10.0",
     "ws": "^0.7.2",
     "wscat": "^1.0.0",
-    "mongoose": "~4.2.4"
+    "mongoose": "~4.2.4",
+    "morgan": "~1.6.1"
   },
   "devDependencies": {
     "chai": "^3.2.0",
@@ -30,7 +31,7 @@
     "protractor": "^2.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp dev"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,5 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/vishivish18/mean-social-app/issues"
-  },
-  "scripts" : { "start" : "gulp dev" }
+  }
 }
