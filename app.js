@@ -1,6 +1,8 @@
+"use-strict"
+
 var express = require('express');
 var router = express.Router();              // get an instance of the express Router
-
+var morgan = require('morgan');
 
 var Post = require('./models/post')
 var isAuthenticated = require('./test')
@@ -44,7 +46,7 @@ app.use('/user/:id', function(req, res, next) {
   next();
 });*/
 
-
+app.use(morgan('dev'));
 app.use('/api/route', router);
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
