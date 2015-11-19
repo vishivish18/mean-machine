@@ -1,5 +1,4 @@
- <nav class='navbar navbar-inverse'>
-  
+<nav class='navbar navbar-default'>
     <div class="navbar-header">
         <a class="navbar-brand" href="/">Trail-Tracker</a>
     </div>
@@ -8,25 +7,15 @@
         <li><a href="/#/home">Home</a></li>
     </ul>
     <ul ng-if="!currentUser" class="nav navbar-nav navbar-right">
-      <li><a class="register" href="/#/register">Register</a></li>
-      <li><a class="login" href="/#/login">Login</a></li>
+        <li><a class="register" href="/#/register">Register</a></li>
+        <li><a class="login" href="/#/login">Login</a></li>
     </ul>
-    <ul ng-if="currentUser" class="nav navbar-nav navbar-right">      
-    <li><a class="logout" href="#" ng-click="logout()">Logout</a></li>
+    <ul ng-if="currentUser" class="nav navbar-nav navbar-right">
+        <li><a class="logout" href="#" ng-click="logout()">Logout</a></li>
     </ul>
-  </nav>  
-
-
-<div class="container">  
-<p>Map for vehicle</p>
-<div id="googleMap" style="position:absolute; height: 500px; width: 90%; background-color:white;">
-  
+</nav>
+<div class="container">
+    <p>Map for vehicle {{model.data}}</p>
+    <div id="googleMap" style="position:absolute; height: 500px; width: 90%; background-color:white;">
+    </div>
 </div>
-
-
-
-
-
-</div>
-
-
