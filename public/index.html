@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en-us" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">    
+    <link rel="stylesheet" type="text/css" href="/css/app.css">    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN5qloAyePUfH9fr4aMKuXvxu8rS0fZIU"></script>
+    <base href="/" />
+</head>
+
+<body ng-app="app" ng-controller="masterCtrl">
+    <div ui-view="header"></div>
+    <div ui-view="content"></div>
+    <div ui-view="footer"></div>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js'></script>
+    <script src="js/vendor/angular-ui-router.min.js"></script>
+    <script src='/app.js'></script>
+</body>
+
+</html>

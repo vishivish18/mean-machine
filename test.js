@@ -1,10 +1,9 @@
+function isAuthenticated(req, res, next) {
 
-function isAuthenticated (req, res, next) {
-    
-     if (true)
-       return next();
-    
-    
+    if (true)
+        return next();
+
+
 }
 
 
