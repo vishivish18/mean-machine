@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('VehiclesEditMapCtrl',function($scope,$http,$location,$routeParams){ 
+.controller('VehiclesEditMapCtrl',function($scope,$http,$location,$stateParams){ 
  
 	$scope.markOnMap = function(lat,long){
 		console.log(long)	 	
@@ -25,8 +25,8 @@ angular.module('app')
 
  
 	 $scope.setup = function(){	 		 	
-
-	 	$http.get('/api/vehicle/location/'+$routeParams.deviceId)
+	 	console.log($stateParams.id);
+	 	$http.get('/api/vehicle/location/'+$stateParams.id)
 	 	.then(function(response) {
 	   		console.log(response.data)
 	   		$scope.model = response.data

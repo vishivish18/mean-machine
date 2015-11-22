@@ -1,7 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-2">
-            <a href="vehicles/new/info" class="btn btn-primary btn-sm pull-left">+ Add New Vehicle</a>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="page-header">
+                <h3>Welcome, {{currentUser.name}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <a class="btn btn-primary btn-sm pull-left" ui-sref=".vehicles">+ Add New Vehicle</a>
+
         </div>
     </div>
     <br/>
@@ -23,11 +31,11 @@
                 <td>{{value.vehicle_number}}</td>
                 <td>{{value.driver_name}}</td>
                 <td>
-                    <a type="button" class="btn btn-info" href="{{'/vehicles/edit/'+value.device_id+'/map'}}"> <span class="glyphicon glyphicon-map-marker"></span> Locate</a>
+                    <a type="button" class="btn btn-info"   ui-sref=".map({id:value.device_id})"> <span class="glyphicon glyphicon-map-marker"></span> Locate</a>
                 </td>
                 <td><a type="button" class="btn btn-default" href="#" target="_blank"><span class="glyphicon glyphicon-warning-sign"></span>  2 Warnings </a></td>
                 <td>{{value.sos_number}}</td>
-                <td><a href="{{'/vehicles/edit/'+value.device_id+'/info'}}">Edit</a></td>
+                <td><a class="btn btn-default"  ui-sref=".details({id:value.device_id})">Edit</a></td>
         </tbody>
     </table>
 </div>
