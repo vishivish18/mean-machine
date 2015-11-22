@@ -1,7 +1,66 @@
 angular.module('app')
-.config(function($routeProvider,$locationProvider) {
+.config(function($stateProvider, $urlRouterProvider){
+ 
+    $urlRouterProvider.otherwise('/');
+ 
+    $stateProvider
+    .state('app',{
+        url: '/',
+        views: {
+            'header': {
+                templateUrl: '/nav.html'
+            },
+            'content': {
+                templateUrl: '/login.html' ,
+                controller: 'LoginCtrl'
+            }
+        }
+    })
+
+    .state('app.login',{
+        url: '/login',
+        views: {
+            'header': {
+                templateUrl: '/nav.html'
+            },
+            'content': {
+                templateUrl: '/login.html',
+                controller: 'LoginCtrl'
+
+            }
+        }
+    })
+ 
+    .state('app.register', {
+        url: 'register',
+        views: {
+            'content@': {
+                templateUrl: 'register.html',
+                controller: 'RegisterCtrl'
+            }
+        }
+ 
+    })
+ 
+    .state('app.home', {
+        url: 'home',
+        views: {
+            'content@': {
+                templateUrl: 'users/home.html',
+                controller: 'HomeCtrl'
+            }
+        }
+ 
+    })
+    
+ 
+    
+ 
+});
+
+/*.config(function($routeProvider,$locationProvider) {
 	$routeProvider
-	.when('/',{controller:'LoginCtrl',templateUrl:'/login.html'})	
+	.when('/',{controller:'LoginCtrl',templateUrl:'login.html'})	
 	.when('/posts',{controller:'PostsCtrl',templateUrl:'posts.html'})
 	.when('/register',{controller:'RegisterCtrl',templateUrl:'register.html'})
 	.when('/home',{controller:'HomeCtrl',templateUrl:'users/home.html'})	
@@ -12,4 +71,4 @@ angular.module('app')
 
 	$locationProvider.html5Mode(true)
 	
-})
+})*/

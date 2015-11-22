@@ -1,0 +1,20 @@
+<nav class='navbar navbar-default'>
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Trail-Tracker</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li ui-sref-active="active"><a ui-sref=".home">Home</a></li>
+        </ul>
+        <ul ng-if="!currentUser" class="nav navbar-nav navbar-right">
+            <li ui-sref-active="active"><a ui-sref=".register">Register</a></li>
+            <li ui-sref-active="active"><a ui-sref=".login">Login</a></li>
+        </ul>
+        <ul ng-if="currentUser" class="nav navbar-nav navbar-right">
+            <li><a class="logout" href="#" ng-click="logout()"><span class="glyphicon glyphicon-log-out" ></span>&nbsp;&nbsp;Logout</a></li>
+        </ul>
+        <p ng-if='currentUser' class="navbar-text navbar-right"><span class="glyphicon glyphicon-cog" ></span>&nbsp;&nbsp;Settings</p>
+        <p ng-if='currentUser' class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" ></span>&nbsp;&nbsp;{{currentUser.username}}</p>
+        
+    </div>
+</nav>
