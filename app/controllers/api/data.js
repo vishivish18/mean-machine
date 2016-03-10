@@ -1,6 +1,6 @@
 var router = require('express').Router()
-var Post = require('../../models/post')
-var websockets = require('../../../websockets')
+var Data = require('../../models/data')
+
 
 router.get('/', function(req, res, next) {
     Post.find()

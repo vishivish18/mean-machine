@@ -1,9 +1,18 @@
 h1 {
-  color: #fff;
+    color: #000000;
 }
+
 p {
-  color: #000;
+    color: #000;
 }
+
 .top-buffer {
-  margin-top: 20px;
+    margin-top: 20px;
 }
+
+.navbar-default {
+    background-color: white !important;
+    border-color: #e4e4e4;
+}
+
+

@@ -1,7 +1,7 @@
 angular.module('app')
-.controller('RegisterCtrl',function($scope,UserSvc ,$location){
+.controller('registerCtrl',function($scope,auth ,$location){
 	$scope.register = function(name,username,password){
-		UserSvc.register(name,username,password)
+		auth.register(name,username,password)
 		.then(function(response){			
 			$scope.$emit('login',response.data)
 			$location.path('/home')

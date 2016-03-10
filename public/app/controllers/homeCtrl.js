@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('HomeCtrl', function($scope, $http) {
+    .controller('homeCtrl', function($scope, $http) {
 
 
         $scope.setup = function() {

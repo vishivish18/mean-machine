@@ -2,40 +2,31 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="page-header">
-                <h3>Welcome, {{currentUser.name}}</h3>
+                <h3>Welcome, {{currentUser}}</h3>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <a class="btn btn-primary btn-sm pull-left" ui-sref=".vehicles">+ Add New Vehicle</a>
-
+            <a class="btn btn-primary btn-sm pull-left" ui-sref=".vehicles">+ Add New Data</a>
         </div>
     </div>
     <br/>
     <table class="table table-hover table-striped table-bordered ">
         <thead>
             <tr>
-                <th data-sort-ignore="true">Device ID</th>
-                <th data-type="alpha">Vehicle Number</th>
-                <th>Driver Name</th>
-                <th data-sort-ignore="true">Position</th>
-                <th>Status</th>
-                <th>SOS</th>
-                <th>Edit</th>
+                <th data-sort-ignore="true">Data ID</th>
+                <th data-type="alpha">Field 1</th>
+                <th>Field 2</th>
+                <th data-sort-ignore="true">Field 3</th>
+                <th>Field 4</th>
+                <th>Field 5</th>
+                <th>Field 6</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="value in model">
-                <td>{{value.device_id}}</td>
-                <td>{{value.vehicle_number}}</td>
-                <td>{{value.driver_name}}</td>
-                <td>
-                    <a type="button" class="btn btn-info"   ui-sref=".map({id:value.device_id})"> <span class="glyphicon glyphicon-map-marker"></span> Locate</a>
-                </td>
-                <td><a type="button" class="btn btn-default" href="#" target="_blank"><span class="glyphicon glyphicon-warning-sign"></span>  2 Warnings </a></td>
-                <td>{{value.sos_number}}</td>
-                <td><a class="btn btn-default"  ui-sref=".details({id:value.device_id})">Edit</a></td>
+           <!--  <tr ng-repeat="value in model">
+            </tr> -->
         </tbody>
     </table>
 </div>

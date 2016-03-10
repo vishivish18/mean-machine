@@ -1,29 +1,100 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-offest4 col-md-offset-4 col-sm-4 col-md-4">
-            <form ng-submit="login(username, password)">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <h1>Login</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <input type="text" name="email" ng-model="username" class="form-control" placeholder="Email" autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <input type="password" name="password" ng-model="password" class="form-control" placeholder="Password" autocomplete="off">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </div>
-                </div>
-                
-            </form>
+<style type="text/css">
+
+.login-form {
+    margin: 50px auto;
+    max-width: 446px;
+    font: 14px/2.6em Lato, serif;
+    color: #808080;
+}
+
+.login-form .panel {
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.login-form .panel a {
+    color: #00aeef;
+}
+
+.login-form .panel .panel-body {
+    padding: 18px 40px 30px 40px;
+}
+
+.login-form .panel .panel-footer {
+    line-height: 2.2em;
+    padding: 20px 40px 20px 40px;
+    background: #f6f6f6;
+    color: #606060;
+}
+
+form[role=login] {
+    color: #808080;
+}
+
+form[role=login] h2 {
+    font-size: 34px;
+}
+
+form[role=login] section {
+    margin: 15px 0;
+}
+
+form[role=login] input,
+form[role=login] button {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+form[role=login] label {
+    margin: 0;
+    font-weight: normal;
+}
+
+form[role=login] input {
+   
+}
+
+form[role=login] input::-webkit-input-placeholder {
+    color: #8899a6;
+}
+
+form[role=login] input:-moz-placeholder {
+    color: #8899a6;
+}
+
+form[role=login] input::-moz-placeholder {
+    color: #8899a6;
+}
+
+form[role=login] input:-ms-input-placeholder {
+    color: #8899a6;
+}
+</style>
+<div class="container">   
+    <section class="login-form">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form role="login" ng-submit="login(username, password)">
+                    <h2>Login</h2>
+                    <label>Enter your email address</label>
+                    <input type="email" name="email" placeholder="you@email.com" ng-model="username" required class="form-control input-lg" />
+                    <label>Enter your password</label>
+                    <input type="password" name="password" placeholder="Password" ng-model="password" required class="form-control input-lg" />
+                    <section>
+                        <input type="checkbox" name="remember" value="1" /> Remember me on this device
+                        <br />
+                        <a href="#">Forgot your password ?</a>
+                        <br />
+                    </section>
+                    <button type="submit" name="go" class="btn btn-lg btn-block btn-primary">Log in</button>
+                    <div ng-if="authFail" class="alert alert-warning" role="alert">You have entered wrong credentials</div>
+                </form>
+            </div>
+            <!-- <div class="panel-footer">
+                Don't have an account ? <a href="#">Register now &raquo;</a>                
+            </div> -->
         </div>
-    </div>
+    </section>
 </div>

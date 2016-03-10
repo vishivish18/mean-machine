@@ -1,18 +1,22 @@
 var db = require('./db')
-var location = db.Schema({
-    device_id: {
+var Data = db.model('Data', {
+    username: {
         type: String,
         required: true
     },
-    latitude: {
+    field1: {
         type: String,
         required: true
     },
-    longitude: {
+    field2: {
         type: String,
         required: true
     },
-    speed: {
+    field3: {
+        type: String,
+        required: true
+    },
+    field4: {
         type: String,
         required: true
     },
@@ -23,4 +27,4 @@ var location = db.Schema({
     }
 })
 
-module.exports = db.model('location', location)
+module.exports = Data
