@@ -19,7 +19,7 @@ angular.module('app')
     })
 
     .state('app.login',{
-        url: '/login',
+        url: 'login',
         views: {
             'header': {
                 templateUrl: '/nav.html',

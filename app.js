@@ -22,7 +22,7 @@ app.use('/', require('./app/controllers/static'))
 
 var port = process.env.PORT || 3000
 var server = app.listen(port, function() {
-    console.log('App listening at the ', port);
+    console.log('Magic begins at port ', port);
 });
 
 

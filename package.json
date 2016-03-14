@@ -1,7 +1,7 @@
 {
-  "name": "mean-social-app",
-  "version": "0.0.0",
-  "description": "Mean sample social app from MEAN stack book",
+  "name": "mean-machine",
+  "version": "0.0.1",
+  "description": "Mean Machine - Boilerplate for MEAN apps",
   "main": "app.js",
   "engines": {
     "node": "4.1.1"
@@ -36,7 +36,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/vishivish18/mean-social-app.git"
+    "url": "git://github.com/vishivish18/mean-machine.git"
   },
   "keywords": [
     "Mongo",
@@ -47,6 +47,6 @@
   "author": "vishalR",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/vishivish18/mean-social-app/issues"
+    "url": "https://github.com/vishivish18/mean-machine/issues"
   }
 }
