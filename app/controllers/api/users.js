@@ -41,6 +41,7 @@ router.post('/', function(req, res, next) {
                 console.error(err)
             } /*throw next(err)   next is coming undefined, even why ? /*/
             // res.send(201)
+            console.log(user)
             res.json(user);
 
         })

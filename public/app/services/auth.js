@@ -5,6 +5,7 @@ angular.module('app')
         return {
             getUser: getUser,
             login: login,
+            register: register,
             logout: logout,
             storeToken: storeToken,
             isLogged: isLogged,
@@ -20,6 +21,15 @@ angular.module('app')
         function login(username, password) {
 
             return $http.post('api/sessions', {
+                username: username,
+                password: password
+            })
+        }
+
+        function register(name, username, password) {
+
+             return $http.post('api/users', {
+                name: name,
                 username: username,
                 password: password
             })
