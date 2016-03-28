@@ -4,7 +4,7 @@ var bcrypt = require('bcrypt')
 var jwt = require('jwt-simple')
 var User = require('../../models/user')
 var config = require('../../../config')
-
+var sendgrid = require('sendgrid')("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");
 
 
 router.get('/', function(req, res, next) {
@@ -41,7 +41,19 @@ router.post('/', function(req, res, next) {
                 console.error(err)
             } /*throw next(err)   next is coming undefined, even why ? /*/
             // res.send(201)
+            var payload = {
+                to: 'vishivish18@gmail.com',
+                from: 'me@fooodel.com',
+                subject: 'Saying Hi',
+                text: 'This is my first email through SendGrid'
+            }
+
+            sendgrid.send(payload, function(err, json) {
+                if (err) { console.error(err); }
+                console.log(json);
+            });
             console.log(user)
+
             res.json(user);
 
         })
