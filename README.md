@@ -9,7 +9,7 @@
 =======================
 
 
-**Live Demo**: http://mean-machine.herokuapp.com  (coming soon)
+**Live Demo**: http://themeanmachine.herokuapp.com  
 
 A boilerplate for **MEAN** web applications.
 
