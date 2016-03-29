@@ -21,20 +21,7 @@ router.get('/', function(req, res, next) {
         if (err) {
             return next(err)
         }
-        console.log("this is the user from USER GET: " + user)
-        var verification = "localhost:3000/signup/validate/" + user._id;
-
-        var payload = {
-            to: 'vishivish18@gmail.com',
-            from: 'bot@meanmachine.com',
-            subject: 'Welcome to Mean-Machine ! Confirm your account',
-            html: "<a href=\"http:\/\/" + verification + "\">Click Here<\/a> to verify your email address and activate your account "
-        }
-
-        sendgrid.send(payload, function(err, json) {
-            if (err) { console.error(err); }
-            console.log(json);
-        });
+        console.log("this is the user from USER GET: " + user)        
         res.json(user)
 
 
