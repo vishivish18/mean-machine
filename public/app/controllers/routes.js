@@ -43,6 +43,19 @@ angular.module('app')
         }
  
     })
+
+    .state('app.validate', {
+        url: 'signup/validate/:id',        
+ 
+        views: {
+            'content@': {
+                templateUrl: 'users/validate.html',
+                controller: 'validateCtrl'        
+            }
+        }
+ 
+    })
+
  
     .state('app.home', {
         url: 'home',

@@ -13,7 +13,13 @@ var user = db.Schema({
         type: String,
         required: true,
         select: false
+    },
+    verified: {
+        type: Boolean,
+        default: false
+
     }
+
 })
 
 module.exports = db.model('User', user)

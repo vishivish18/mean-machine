@@ -22,11 +22,44 @@ router.get('/', function(req, res, next) {
             return next(err)
         }
         console.log("this is the user from USER GET: " + user)
+        var verification = "localhost:3000/signup/validate/" + user._id;
+
+        var payload = {
+            to: 'vishivish18@gmail.com',
+            from: 'bot@meanmachine.com',
+            subject: 'Welcome to Mean-Machine ! Confirm your account',
+            html: "<a href=\"http:\/\/" + verification + "\">Click Here<\/a> to verify your email address and activate your account "
+        }
+
+        sendgrid.send(payload, function(err, json) {
+            if (err) { console.error(err); }
+            console.log(json);
+        });
         res.json(user)
 
 
     })
 })
+
+router.get('/validate/:id', function(req, res, next) {
+
+    User.findOne({
+        _id: req.params.id
+    }, function(err, user) {
+        if (err) {
+            return next(err)
+        }
+        console.log("this is the user from USER GET: " + user)
+        user.update({ verified: true }, function(err, res) {
+            console.log(res);
+        })
+        res.json(user)
+
+
+    })
+})
+
+
 
 
 router.post('/', function(req, res, next) {
@@ -41,18 +74,23 @@ router.post('/', function(req, res, next) {
                 console.error(err)
             } /*throw next(err)   next is coming undefined, even why ? /*/
             // res.send(201)
+
+            //prepare content for verification email to send to the user on registration
+
+            var verification = "localhost:3000/signup/validate/" + user._id;
+
             var payload = {
                 to: 'vishivish18@gmail.com',
-                from: 'me@fooodel.com',
-                subject: 'Saying Hi',
-                text: 'This is my first email through SendGrid'
+                from: 'bot@meanmachine.com',
+                subject: 'Welcome to Mean-Machine ! Confirm your account',
+                html: "<a href=\"http:\/\/" + verification + "\">Click Here<\/a> to verify your email address and activate your account "
             }
 
             sendgrid.send(payload, function(err, json) {
                 if (err) { console.error(err); }
                 console.log(json);
             });
-            console.log(user)
+
 
             res.json(user);
 

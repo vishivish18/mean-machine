@@ -1,6 +1,14 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Confirmation Needed !</strong> An email has been sent to you, please click the link in that to confirm your email.
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="page-header">
                 <h3>Welcome, {{currentUser}}</h3>
             </div>
@@ -25,7 +33,7 @@
             </tr>
         </thead>
         <tbody>
-           <!--  <tr ng-repeat="value in model">
+            <!--  <tr ng-repeat="value in model">
             </tr> -->
         </tbody>
     </table>
