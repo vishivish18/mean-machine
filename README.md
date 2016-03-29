@@ -1,6 +1,11 @@
 ###The Mean-Machine (Boilerplate for MEAN Apps)
 
 
+![](https://s30.postimg.org/4fcwcwbkh/mean-machine.png)
+
+
+
+
 =======================
 
 
