@@ -20,7 +20,7 @@ app.use('/api/users', require('./app/controllers/api/users'))
 app.use('/api/sessions', require('./app/controllers/api/sessions'))
 app.use('/', require('./app/controllers/static'))
 
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 1805
 var server = app.listen(port, function() {
     console.log('Magic begins at port ', port);
 });
