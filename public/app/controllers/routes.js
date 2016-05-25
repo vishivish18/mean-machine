@@ -68,12 +68,12 @@ angular.module('app')
  
     })
 
-     .state('app.home.vehicles', {
-        url: '/vehicles/new',
+     .state('app.home.data', {
+        url: '/data/new',
         views: {
             'content@': {
-                templateUrl: 'vehicles/newVehicle.html',
-                controller: 'VehiclesNewInfoCtrl'
+                templateUrl: 'users/newData.html',
+                controller: 'newDataCtrl'
             }
         }
  

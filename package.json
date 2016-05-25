@@ -9,6 +9,7 @@
   "dependencies": {
     "angular-ui-router": "~0.2.15",
     "bcrypt": "^0.8.4",
+    "bcryptjs": "^2.3.0",
     "body-parser": "~1.13.2",
     "express": "~4.13.1",
     "gulp": "^3.9.0",

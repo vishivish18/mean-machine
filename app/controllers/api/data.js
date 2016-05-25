@@ -2,29 +2,44 @@ var router = require('express').Router()
 var Data = require('../../models/data')
 
 
-router.get('/', function(req, res, next) {
-    Post.find()
-        .sort('-date')
-        .exec(function(err, posts) {
-            if (err) {
-                return next(err)
-            }
-            res.json(posts)
-        })
+//Save details for new data (CREATE)
+router.post('/', function(req, res, next) {
+
+    console.log(req.auth.username)
+    var data = new Data({
+        username: req.auth.username,
+        field1: req.body.field1,
+        field2: req.body.field2,
+        field3: req.body.field3,
+        field4: req.body.field4
+        
+    })
+
+    data.save(function(err, data) {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        // res.send(201)
+        res.json(data);
+
+    })
 })
 
-router.post('/', function(req, res, next) {
-    var post = new Post({
-        body: req.body.body
-    })
-    post.username = req.auth.username // req.auth.username not working, undfined as of now
-    post.save(function(err, post) {
+router.get('/', function(req, res, next) {
+
+    Data.find({
+        username: req.auth.username
+    }, function(err, data) {
         if (err) {
             return next(err)
+        } else {            
+            res.json(data)
         }
-        websockets.broadcast('new_post', post)
-        res.status(201).json(post)
+
     })
+
+
 })
+
 
 module.exports = router

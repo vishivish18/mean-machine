@@ -7,30 +7,19 @@ angular.module('app')
 
             setSetupProcess: function($scope) {
                 $scope.loading = false;
-
+                console.log($scope)
                 $scope.setup = function(callbackFn) {
                     if ($scope.loading) return;
 
                     $scope.loading = true;
 
 
-                    $http.get($scope.apiUri, {
-                            data: {
-                                filters: $scope.filters,
-                                sortings: $scope.sortings,
-                                with: $scope.with,
-
-                                page: $scope.state.pageNum,
-                                _format: 'default',
-                                _per_page: $scope.state.perPage,
-                                _pagination: $scope._pagination
-                            }
-                        })
+                    $http.get($scope.apiUri)
                         .then(function(data) {
-
-                            $scope.state.lastPage = data.last_page;
+                            console.log(data)
+                           /* $scope.state.lastPage = data.last_page;
                             $scope.isLastPage = ($scope.state.pageNum == $scope.state.lastPage);
-                            $scope.loading = false;
+                            $scope.loading = false;*/
                             if (callbackFn !== undefined)
                                 callbackFn(data);
                         }, function(res) {
@@ -44,7 +33,7 @@ angular.module('app')
 
 
             run: function($scope) {
-
+                console.log("in prognitor service")
                 this.setSetupProcess($scope);
 
             }

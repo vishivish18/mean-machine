@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 })); // support encoded bodies
 app.use(require('./config/auth'))
-app.use('/api/posts', require('./app/controllers/api/data'))
+app.use('/api/data', require('./app/controllers/api/data'))
 app.use('/api/users', require('./app/controllers/api/users'))
 app.use('/api/sessions', require('./app/controllers/api/sessions'))
 app.use('/', require('./app/controllers/static'))
