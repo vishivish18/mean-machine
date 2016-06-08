@@ -12,6 +12,7 @@
     "bcryptjs": "^2.3.0",
     "body-parser": "~1.13.2",
     "express": "~4.13.1",
+    "express-session": "^1.13.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-ng-annotate": "^1.1.0",
@@ -23,6 +24,9 @@
     "lodash": "^3.10.0",
     "mongoose": "~4.2.4",
     "morgan": "~1.6.1",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
     "sendgrid": "^2.0.0"
   },
   "devDependencies": {

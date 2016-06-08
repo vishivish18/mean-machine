@@ -1,25 +1,53 @@
 var db = require('./db')
+// var user = db.Schema({
+//     name: {
+//         type: String,
+//         required: true
+//     },
+//     username: {
+//         type: String,
+//         required: true,
+//         unique: true
+//     },
+//     password: {
+//         type: String,
+//         required: true,
+//         select: false
+//     },
+//     verified: {
+//         type: Boolean,
+//         default: false
+
+//     }
+
+// })
 var user = db.Schema({
-    name: {
-        type: String,
-        required: true
+
+    local            : {
+        email        : String,
+        password     : String,
     },
-    username: {
-        type: String,
-        required: true,
-        unique: true
+    facebook         : {
+        id           : String,
+        token        : String,
+        email        : String,
+        name         : String
     },
-    password: {
-        type: String,
-        required: true,
-        select: false
+    twitter          : {
+        id           : String,
+        token        : String,
+        displayName  : String,
+        username     : String
     },
-    verified: {
-        type: Boolean,
-        default: false
+    google           : {
+        id           : String,
+        token        : String,
+        email        : String,
+        name         : String,
+        photo        : String
 
     }
 
-})
+});
 
 module.exports = db.model('User', user)

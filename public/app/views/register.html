@@ -1,5 +1,4 @@
 <style type="text/css">
-
 .login-form {
     margin: 50px auto;
     max-width: 446px;
@@ -52,9 +51,7 @@ form[role=login] label {
     font-weight: normal;
 }
 
-form[role=login] input {
-   
-}
+form[role=login] input {}
 
 form[role=login] input::-webkit-input-placeholder {
     color: #8899a6;
@@ -72,8 +69,7 @@ form[role=login] input:-ms-input-placeholder {
     color: #8899a6;
 }
 </style>
-
-<div class="container">   
+<div class="container">
     <section class="login-form">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -85,11 +81,16 @@ form[role=login] input:-ms-input-placeholder {
                     <input type="email" name="email" placeholder="you@email.com" ng-model="username" required class="form-control input-lg" />
                     <label>Enter your password</label>
                     <input type="password" name="password" placeholder="Password" ng-model="password" required class="form-control input-lg" />
-                    <section>                                                
+                    <button type="submit" name="go" class="btn btn-lg btn-block btn-primary">Sign Up</button>
+
+                    <a href=""><img style="margin-top:15px;" class="button img-responsive" src="/images/btn_fb.png" /></a>
+                    <a ng-click="oauth('google')"><img style="margin-top:15px;"  class="button img-responsive"  src="/images/btn_ggl.png" /></a>
+
+                    <section>
                         <a href="#">Already have an account ?</a>
                         <br />
                     </section>
-                    <button type="submit" name="go" class="btn btn-lg btn-block btn-primary">Sign Up</button>
+                
                     <div ng-if="authFail" class="alert alert-warning" role="alert">You have entered wrong credentials</div>
                 </form>
             </div>
