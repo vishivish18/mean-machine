@@ -32,6 +32,10 @@ I will add my learnings on the way and will try to use code as documentation.
 - Email Verification with [SendGrid](https://www.npmjs.com/package/sendgrid)
 - Code cleanup
 
+### 0.0.2 (WIP: Work In Progress)
+- Working on Oauth 2.0 for Facebook and Google using passport
+- Account Link ups and oauth schema
+- Code cleanup
 
 Contributing
 ------------
