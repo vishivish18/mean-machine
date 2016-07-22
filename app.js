@@ -14,7 +14,7 @@ app.use(session({ secret: 'thisshouldbeasecret' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
 app.get('/success', function(req,res,next){
-	res.send("Hello, You wegre succesfull");
+	res.send("Hello, You were succesfull");
 })
 app.get('/fail', function(req,res,next){
 	res.send("Sorry, You failed ");
