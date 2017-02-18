@@ -32,6 +32,7 @@ app.use(express.static(path.resolve('public/assets/')))
 app.use(express.static(path.resolve('public/app/views')))
 app.get('*', function(req, res) {
     res.sendFile(path.resolve('public/index.html'));
+    //res.sendFile(path.resolve('public/app/views/material/examples/dashboard.html'));
 });
 
 

@@ -1,26 +1,8 @@
 angular.module('app')
-    .controller('homeCtrl', function($scope, $http, prognitor) {
-
-
-
+    .controller('homeCtrl', function($scope, $http) {
         $scope.apiUri = "/api/data"
-        prognitor.run($scope)
+        //prognitor.run($scope)
         $scope.setup(function(res) {
-                console.log(res)
-            })
-            /*$http.get('/api/vehicle')
-                .then(function(response) {
-                    $scope.model = response.data;
-
-                }, function(response) {
-                    // called asynchronously if an error occurs
-                    // or server returns response with an error status.
-                });*/
-
-
-
-
-
-
-
+            console.log(res)
+        })
     })

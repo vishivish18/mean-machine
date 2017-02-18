@@ -15,12 +15,12 @@ angular.module('app')
         }
 
         function getUser() {
-            return $http.get('api/users')
+            return $http.get('botsupply/api/users/signin')
         }
 
         function login(username, password) {
 
-            return $http.post('api/sessions', {
+            return $http.post('botsupply/api/users/session', {
                 username: username,
                 password: password
             })
@@ -28,7 +28,7 @@ angular.module('app')
 
         function register(name, username, password) {
 
-             return $http.post('api/users', {
+             return $http.post('botsupply/api/users/signup', {
                 name: name,
                 username: username,
                 password: password

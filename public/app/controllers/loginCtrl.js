@@ -7,9 +7,10 @@ angular.module('app')
                     auth.storeToken(res.data, function() {
                         auth.getUser()
                             .then(function(res) {
-                                auth.postLoginOps(res.data, function() {
-                                    auth.postLoginRouteHandler();
-                                });
+                                console.log("in here")
+                                // auth.postLoginOps(res.data, function() {
+                                //     auth.postLoginRouteHandler();
+                                // });
                             })
                     });
 

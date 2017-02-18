@@ -32,6 +32,20 @@ angular.module('app')
             }
         }
     })
+    .state('app.dashboard',{
+        url: 'dashboard',
+        views: {
+            'header': {
+                templateUrl: '/nav.html',
+                controller: 'navCtrl'
+            },
+            'content': {
+                templateUrl: 'material/examples/dashboard.html',
+                controller: 'loginCtrl'
+
+            }
+        }
+    })
  
     .state('app.register', {
         url: 'register',
@@ -61,8 +75,7 @@ angular.module('app')
         url: 'home',
         views: {
             'content@': {
-                templateUrl: 'users/home.html',
-                controller: 'homeCtrl'
+                templateUrl: 'users/home.html'                
             }
         }
  
