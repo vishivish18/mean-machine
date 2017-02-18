@@ -1,46 +1,37 @@
+/**
+ * Module dependencies.
+ */
 "use-strict"
 
-var express = require('express');
-var router = express.Router(); // get an instance of the express Router
-var morgan = require('morgan');
-var passport = require('passport');
-var session  = require('express-session');
+var express = require('express')
+var mongoose = require("mongoose")
+var bodyParser = require('body-parser')
+var routes = require("./app/routes")
 
-var bodyParser = require('body-parser');
+
 var app = express();
-require('./config/passport')(passport);
-//app.use(morgan('dev'));
-app.use(session({ secret: 'thisshouldbeasecret' })); // session secret
-app.use(passport.initialize());
-app.use(passport.session());
-app.get('/success', function(req,res,next){
-	res.send("Hello, You were succesfull");
-})
-app.get('/fail', function(req,res,next){
-	res.send("Sorry, You failed ");
-})
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+var router = require('express').Router()
+var path = require('path')
 
-// the callback after google has authenticated the user
-app.get('/auth/google/callback',
-            passport.authenticate('google', {
-                    successRedirect : '/home',
-                    failureRedirect : '/fail'
-            }));
-
-
-app.use('/api/route', router);
-app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.json({ limit: 153791147 }));
 app.use(bodyParser.urlencoded({
-    extended: true
-})); // support encoded bodies
-//app.use(require('./config/auth'))
-app.use('/api/data', require('./app/controllers/api/data'))
-app.use('/api/users', require('./app/controllers/api/users'))
-app.use('/api/sessions', require('./app/controllers/api/sessions'))
-app.use('/', require('./app/controllers/static'))
+    extended: true,
+    limit: 153791147
+}));
 
-var port = process.env.PORT || 1805
+var port = process.env.PORT || 1818
+
 var server = app.listen(port, function() {
     console.log('Magic begins at port ', port);
 });
+console.log(routes.apiBaseUri);
+
+app.use(routes.apiBaseUri, routes.api(app));
+
+app.use(express.static(path.resolve('public/assets/')))
+app.use(express.static(path.resolve('public/app/views')))
+app.get('*', function(req, res) {
+    res.sendFile(path.resolve('public/index.html'));
+});
+
+

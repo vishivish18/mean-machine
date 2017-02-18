@@ -1,6 +1,12 @@
 var router = require('express').Router()
+var users = require('./api/users')
+var data = require('./api/data')
 
-router.use('/api', require('./api'))
-router.use('/', require('./static'))
-
-module.exports = router
+module.exports = {
+    // Extras
+    // init: init,
+    // http: http,
+    // API Endpoints   
+    users: users,
+    data: data
+};
